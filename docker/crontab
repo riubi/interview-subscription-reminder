@@ -1,0 +1,7 @@
+# This is an example of installed crontab
+
+#0 1 * * *   email_verification_preloader >> /var/log/cron.log 2>&1
+#*/5 * * * * workers email_verifier 50 >> /var/log/cron.log 2>&1
+
+#0 1 * * *   subscription_reminder >> /var/log/cron.log 2>&1
+#*/5 * * * * workers email_sender 20 >> /var/log/cron.log 2>&1

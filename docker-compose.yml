@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:14
+    command: ["-c", "max_wal_size=3GB"]
+    container_name: "postgres"
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: "php-cli"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+volumes:
+  db_data:

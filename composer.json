@@ -1,0 +1,31 @@
+{
+  "name": "riubi/test-task-subscription-reminder",
+  "description": "This project is an implementation of a test task for sending emails.",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Papina Ruslan",
+      "email": "clu@tut.by"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "ext-pgsql": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "files": [
+      "src/database.php",
+      "src/logger.php",
+      "src/mailer.php",
+      "src/queue.php",
+      "src/task_runner.php",
+      "src/user.php"
+    ]
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
