@@ -1,0 +1,6 @@
+# This is an example of installed configs for cron
+
+5 0 * * * /usr/bin/php /app/scripts/subscription_reminder.php
+5 0 * * * /usr/bin/php /app/scripts/email_verification.php
+
+0 * * * * /usr/bin/php /app/scripts/email_sender.php

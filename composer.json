@@ -1,0 +1,17 @@
+{
+  "type": "project",
+  "require": {
+    "php": "^7.4 || ^8.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
+}
